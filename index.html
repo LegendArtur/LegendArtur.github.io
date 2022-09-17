@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Parallax Scrolling Website</title>
+    <title>Artur G. Portfolio</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -16,9 +16,30 @@
         </ul>
     </header>
     <section>
-        <img src="shapes.jpg" id="shapes">
-        <img src="marc.png" id="marc">
-        <img src="mountain.png" id="mountain">
+        <img src="stars.png" id="stars">
+        <img src="artur.png" id="artur">
+        <h2 id="text">Artur Gubaidullin</h2>
+        <a href="#sec" id="button">Explore</a>
+        <img src="triangles1.png" id="triangles">
     </section>
+    <div class ="sec" id="sec">
+        <h2>Description</h2>
+        <p>Second year Software Engineering student at Concordia University, Montreal.
+            <br>I am looking for internship opportunities (Summer 2023) to expand my knowledge, and use my passion for programming to the benefit of others.
+        </p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let artur = document.getElementById('artur');
+        let triangles = document.getElementById('triangles');
+        let text = document.getElementById('text');
+        let button = document.getElementById('button');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+        })
+    </script>
 </body>
 </html>
