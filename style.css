@@ -1,120 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Quicksand, sans-serif;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Quicksand, sans-serif;
+  scroll-behavior: smooth;
 }
 body {
-    min-height: 100vh;
-    background: #051622;
-    overflow-x: hidden;
+  min-height: 100vh;
+  background: #F79E02;
+  overflow-x: hidden;
 }
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10000;
+
+.overlay {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: 0.5s;
 }
-header .logo {
-    color: #1BA098;
-    font-weight: 400;
-    text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
-header ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.overlay a {
+  padding: 8px;
+  opacity: 0;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block;
+  transition: ease-out;
 }
-header ul li{
-    list-style: none;
-    margin-left: 20px;
+
+.active a{
+    opacity: 1;
 }
-header ul li a{
-    text-decoration: none;
-    padding: 6px 15px;
-    color: #1BA098;
-    border-radius: 20px;
+
+.overlay a:hover,
+.overlay a:focus {
+  font-size: 50px;
+  transition: 0.25s;
 }
-header ul li a:hover , header ul li a.active{
-    background: #DEB992;
-    color: #051622;
-}
-section{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    padding: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-section::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to top, #051622, transparent);
-    z-index: 1000;
-}
-section img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.active #myNav{
     height: 100%;
-    object-fit: cover;
-    pointer-events: none;
 }
-section img#artur{
-    width: 50%;
-    height: auto;
+.toggle {
+  position: absolute;
+  z-index: 3000;
+  right: 10px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
 }
-section img#triangles{
-    z-index: 10;
-    width: 50%;
-    height: auto;
+.toggle span {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background: white;
+  border-radius: 4px;
+  transition: 0.5s;
 }
-#text {
-    font-weight: 100;
-    position: absolute;
-    color: #1BA098;
-    white-space: normal;
-    font-size: 7.5vw;
-    z-index: 9;
+.toggle span:nth-child(1) {
+  transform: translateY(-15px);
+  width: 25px;
+  left: 15px;
 }
-#button {
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 30px;
-    border-radius: 40px;
-    background: #DEB992;
-    color: black;
-    font-size: 1.5em;
-    z-index: 9;
-    transform: translateY(100px);
+.toggle span:nth-child(2) {
+  transform: translateY(15px);
+  width: 15px;
+  left: 15px;
 }
-.sec {
-    position: relative;
-    padding: 100px;
-    background: #051622;
+.active .toggle span:nth-child(1) {
+  width: 40px;
+  transform: translateY(0) rotate(45deg);
+  transition-delay: 0.125s;
 }
-.sec h2 {
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    color: #1BA098;
+.active .toggle span:nth-child(2) {
+  width: 40px;
+  transform: translateY(0) rotate(135deg);
 }
-.sec p{
-    font-size: 1.2em;
-    color: #1BA098;
+.active .toggle span:nth-child(3) {
+  transform: translateX(-60px);
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
 }
