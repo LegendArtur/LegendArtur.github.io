@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
     background: linear-gradient(-45deg, #F79E02, #e73c7e);
     background-size: 400% 400%;
-    animation: gradient 15s cubic-bezier(0.7, 0.1, 0.4, 1) infinite;
+    animation: gradient 5s cubic-bezier(0.7, 0.1, 0.4, 1) infinite;
     overflow-x: hidden;
 }
 
@@ -112,6 +112,14 @@ body {
     width: 60%;
 }
 
+.toggle:hover span:nth-child(1) {
+    width: 30%;
+}
+
+.toggle:hover span:nth-child(2) {
+    width: 45%;
+}
+
 .active .toggle span:nth-child(1) {
     width: 60%;
     transform: translateY(0) rotate(45deg);
@@ -128,14 +136,51 @@ body {
 }
 
 .info-section {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.intro {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
 }
 
-.intro {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+.intro span {
+    color: white;
+    font-size: 6rem;
+    font-weight: 1000;
+    padding: 0.5rem;
+}
+
+#learn-btn {
+    font-size: 2rem;
+    max-width: fit-content;
+    right: 0px;
+    cursor: pointer;
+}
+
+#learn-btn::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+#learn-btn:hover::after {
+    transform: scaleX(1);
+}
+
+.clear {
+    clear: both;
 }
 
 @media only screen and (max-width: 500px) {
