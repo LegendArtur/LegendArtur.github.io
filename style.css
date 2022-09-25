@@ -9,12 +9,41 @@
 }
 
 body {
-    padding: 30px;
     min-height: 100vh;
     background: linear-gradient(-45deg, #F79E02, #e73c7e);
-    background-size: 400% 400%;
+    background-size: 1000% 1000%;
     animation: gradient 5s cubic-bezier(0.7, 0.1, 0.4, 1) infinite;
+    overflow: overlay;
     overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    height: 20px;
+}
+
+.container {
+    padding: 40px;
+    height: 100vh;
+    /* overflow-y: scroll;
+    scroll-snap-type: y mandatory; */
 }
 
 @keyframes gradient {
@@ -35,7 +64,7 @@ body {
     height: 0;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 900;
     left: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -76,14 +105,13 @@ body {
 }
 
 .toggle {
-    position: absolute;
+    position: fixed;
     z-index: 3000;
     width: 80px;
     height: 80px;
-    right: 30px;
+    right: 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
     overflow: hidden;
     justify-content: flex-end;
@@ -135,13 +163,52 @@ body {
     transform: translateX(-200px);
 }
 
-.info-section {
+#nav-side {
+    right: 17px;
+    top: 50%;
+    position: fixed;
+    z-index: 100;
+}
+
+#nav-side ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nav-side ul li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 7px;
+    position: relative;
+}
+
+.circle {
+    border-radius: 300%;
+    position: absolute;
+    z-index: 300;
+    height: 10px;
+    width: 10px;
+    right: 10px;
+    background: #fff;
+    transition: all .1s ease-in-out;
+}
+
+.circle.active{
+    transition: 0.25s ease;
+    width: 30px;
+}
+
+.section {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
+
 .intro {
     display: flex;
     position: absolute;
@@ -152,7 +219,10 @@ body {
     color: white;
     font-size: 6rem;
     font-weight: 1000;
-    padding: 0.5rem;
+}
+
+.intro span:nth-child(2) {
+    font-size: 4rem;
 }
 
 #learn-btn {
@@ -177,10 +247,6 @@ body {
 
 #learn-btn:hover::after {
     transform: scaleX(1);
-}
-
-.clear {
-    clear: both;
 }
 
 @media only screen and (max-width: 500px) {

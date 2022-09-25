@@ -8,7 +8,9 @@
 </head>
 
 <body>
+    
     <div id="nav-curtain" class>
+        
         <div class="menu">
             <div class="menu-content">
                 <a href="#">About</a>
@@ -22,23 +24,70 @@
             <span></span>
             <span></span>
         </div>
-        <script>
-            let menutoggle = document.querySelector('.toggle');
-            menutoggle.onclick = function () {
-                document.getElementById('nav-curtain').classList.toggle('active')
-            }
-        </script>
     </div>
-    <section class="info-section">
-        <div class="intro">
-            <span id="name">Artur Gubaidullin</span>
-            <span id="job">Software Developer</span>
-            <span href="#" id="learn-btn">Learn More</span>
+    <div class="container">
+        <div id="nav-side">
+            <ul>
+                <li>
+                    <a href="#section0">
+                        <span class="circle active"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#section1">
+                        <span class="circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#section2">
+                        <span class="circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#section3">
+                        <span class="circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#section4">
+                        <span class="circle"></span>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </section>
-    <section class="info-section">
-        
-    </section>
+        <div class="section active" id="section0">
+            <div class="intro">
+                <span id="name">Artur Gubaidullin</span>
+                <span id="job">Software Developer</span>
+                <span href="#" id="learn-btn">Learn More</span>
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <div class="intro">
+                <span id="name">Description</span>
+                <span id="job">Software Developer</span>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="intro">
+                <span id="name">Experience</span>
+                <span id="job">Hello World</span>
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="intro">
+                <span id="name">Projects</span>
+                <span id="job">asdasd asd asd asd asd </span>
+            </div>
+        </div>
+        <div class="section" id="section4">
+            <div class="intro">
+                <span id="name">Contact</span>
+                <span id="job">artur.gubaidullin@gmail.com</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
