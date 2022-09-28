@@ -11,8 +11,8 @@
 body {
     min-height: 100vh;
     background: linear-gradient(-45deg, #F79E02, #e73c7e);
-    background-size: 1000% 1000%;
-    animation: gradient 5s cubic-bezier(0.7, 0.1, 0.4, 1) infinite;
+    background-size: 600% 600%;
+    /* animation: gradient 5s cubic-bezier(0.7, 0.1, 0.4, 1) infinite; */
     overflow: overlay;
     overflow-x: hidden;
 }
