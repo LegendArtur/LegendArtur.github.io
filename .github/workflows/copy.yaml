@@ -14,5 +14,5 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "*.html,*.css,*/*.js"
+        source: "*.html,*.css,**/*.js"
         target: "/var/www/html"
