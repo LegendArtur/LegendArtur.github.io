@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
 
+:root {
+    --nav-color: #DCC7BE;
+    --text-color: #DCC7BE;
+    --text-color-secondary: #F8F32B;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +16,9 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(-45deg, #F79E02, #e73c7e);
-    background-size: 600% 600%;
-    /* animation: gradient 5s cubic-bezier(0.7, 0.1, 0.4, 1) infinite; */
+    /* background: linear-gradient(-45deg, #F79E02, #e73c7e);
+    animation: gradient 5s cubic-bezier(0.7, 0.1, 0.4, 1) infinite; */
+    background: #231b1d;
     overflow: overlay;
     overflow-x: hidden;
 }
@@ -30,13 +36,14 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #fff;
+    background: var(--nav-color);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
     height: 20px;
+    width: 100px;
 }
 
 .container {
@@ -44,20 +51,6 @@ body {
     height: 100vh;
     /* overflow-y: scroll;
     scroll-snap-type: y mandatory; */
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 .menu {
@@ -85,7 +78,7 @@ body {
     opacity: 0;
     text-decoration: none;
     font-size: 36px;
-    color: white;
+    color: var(--text-color);
     display: block;
     transition: 0.125s ease-in;
 }
@@ -118,10 +111,10 @@ body {
 }
 
 .toggle span {
+    background: var(--nav-color);
     position: absolute;
     width: 40px;
     height: 4px;
-    background: white;
     border-radius: 4px;
     transition: 0.5s;
 }
@@ -178,16 +171,17 @@ body {
 }
 
 .circle {
+    background: var(--nav-color);
+
     position: absolute;
     width: 10px;
     height: 4px;
     right: 0;
-    background: white;
     border-radius: 4px;
     transition: 0.5s;
 }
 
-.circle.active{
+.circle.active {
     transition: 0.25s ease;
     width: 30px;
 }
@@ -198,21 +192,76 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    color: var(--text-color);
 }
 
-.intro {
+.section-info {
     display: flex;
-    position: absolute;
+    position: relative;
     flex-direction: column;
 }
 
-.intro span {
-    color: white;
-    font-size: 6rem;
-    font-weight: 1000;
+.section .text {
+    font-size: 2rem;
 }
 
-.intro span:nth-child(2) {
+.section .title {
+    font-size: 6rem;
+    transition: 0.5s;
+}
+
+.section .title:hover {
+    letter-spacing: 0.1rem;
+}
+
+/* .section .name {
+    display: flex;
+    align-items: center;
+} */
+
+.section .name:hover:after {
+    content: "_";
+    color: var(--text-color-secondary);
+    display: inline-block;
+    animation: cursor-blink 1s steps(2) infinite;
+}
+
+@keyframes cursor-blink {
+    0% {
+        opacity: 0;
+    }
+}
+
+/* .gradient {
+    background: -webkit-linear-gradient(135deg, #00F6ED, #Bb00ff);
+    background: -moz-linear-gradient(135deg, #00F6ED, #Bb00ff);
+    background: linear-gradient(-45deg, #00F6ED, #Bb00ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+    -webkit-animation: gradient 3s ease infinite;
+    -moz-animation: gradient 3s ease infinite;
+}
+@-webkit-keyframes gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradient { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+} */
+
+.section #job {
     font-size: 4rem;
 }
 
@@ -231,18 +280,13 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #fff;
+    background-color: var(--text-color-secondary);
     transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
 }
-
 #learn-btn:hover::after {
     transform: scaleX(1);
 }
 
 @media only screen and (max-width: 500px) {
-    .toggle {
-        width: 20%;
-        height: auto;
-    }
 }
