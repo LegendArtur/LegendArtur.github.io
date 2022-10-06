@@ -263,6 +263,7 @@ body {
 
 #underline-btn {
     text-decoration: none;
+    color: var(--text-color);
     font-size: 2rem;
     max-width: fit-content;
     right: 0px;
