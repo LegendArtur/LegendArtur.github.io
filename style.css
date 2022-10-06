@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
 
 :root {
-    --nav-color: #DCC7BE;
-    --text-color: #DCC7BE;
-    --text-color-secondary: #F8F32B;
+    --nav-color: black;
+    --text-color: black;
+    --text-color-secondary: black;
 }
 
 * {
@@ -16,9 +16,7 @@
 
 body {
     min-height: 100vh;
-    /* background: linear-gradient(-45deg, #F79E02, #e73c7e);
-    animation: gradient 5s cubic-bezier(0.7, 0.1, 0.4, 1) infinite; */
-    background: #231b1d;
+    background: #94d736;
     overflow: overlay;
     overflow-x: hidden;
 }
@@ -195,6 +193,9 @@ body {
     color: var(--text-color);
 }
 
+.section.seen {
+    opacity: 1;
+}
 .section-info {
     display: flex;
     position: relative;
@@ -214,12 +215,7 @@ body {
     letter-spacing: 0.1rem;
 }
 
-/* .section .name {
-    display: flex;
-    align-items: center;
-} */
-
-.section .name:hover:after {
+.section .name:after {
     content: "_";
     color: var(--text-color-secondary);
     display: inline-block;
@@ -265,14 +261,15 @@ body {
     font-size: 4rem;
 }
 
-#learn-btn {
+#underline-btn {
+    text-decoration: none;
     font-size: 2rem;
     max-width: fit-content;
     right: 0px;
     cursor: pointer;
 }
 
-#learn-btn::after {
+#underline-btn::after {
     content: "";
     position: relative;
     display: block;
@@ -284,7 +281,7 @@ body {
     transform: scaleX(0);
     transition: 0.3s ease;
 }
-#learn-btn:hover::after {
+#underline-btn:hover::after {
     transform: scaleX(1);
 }
 
