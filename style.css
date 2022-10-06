@@ -98,10 +98,10 @@ body {
 .toggle {
     position: fixed;
     z-index: 3000;
-    width: 80px;
-    height: 80px;
-    right: 40px;
-    display: flex;
+    width: 5rem;
+    height: 5rem;
+    right: 2rem;
+    display: none;
     align-items: center;
     cursor: pointer;
     overflow: hidden;
@@ -111,8 +111,7 @@ body {
 .toggle span {
     background: var(--nav-color);
     position: absolute;
-    width: 40px;
-    height: 4px;
+    height: 0.25rem;
     border-radius: 4px;
     transition: 0.5s;
 }
@@ -287,4 +286,7 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
+    .toggle {
+        display: flex;
+    }
 }
