@@ -6,12 +6,24 @@
     --text-color-secondary: black;
 }
 
+.glass-effect {
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Quicksand, sans-serif;
     scroll-behavior: smooth;
+}
+
+*:focus {
+    background-color: transparent;
 }
 
 body {
@@ -45,20 +57,23 @@ body {
 }
 
 .header {
-    backdrop-filter: blur(5px);
+    display: none;
+
     position: fixed;
     z-index: 10000;
     width: 100%;
     height: 5rem;
-    display: none;
     flex-direction: column;
     align-items: center;
+}
+
+.header:before {
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
 }
 
 .inner-header {
     width: 85%;
     height: 100%;
-    /* background-color: rgba(255, 0, 0, 0.5); */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -82,13 +97,38 @@ body {
 .header-navigation li {
     padding: 1rem;
     text-decoration: none;
-    display: block;
+    transition: 0.125s ease;
 }
 
 .header-navigation li a {
     color: var(--text-color);
     text-decoration: none;
     font-size: 1.5rem;
+    transition: 0.125s ease;
+
+}
+
+.header-navigation li:active {
+    border-radius: 1rem;
+border-color: black;
+    transition: 0.125s ease;
+}
+
+.header-navigation li a::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0.1rem;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-color-secondary);
+    transform: scaleX(0);
+    transition: 0.3s ease;
+}
+
+.header-navigation li a:hover::after {
+    transform: scaleX(1);
 }
 
 .container {
@@ -103,8 +143,6 @@ body {
     z-index: 900;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
     overflow: hidden;
     transition: 0.5s;
 }
@@ -133,7 +171,7 @@ body {
 
 .menu a:hover,
 .menu a:focus {
-    font-size: 75px;
+    font-size: 2rem;
     transition: 0.125s;
 }
 
@@ -313,7 +351,7 @@ align-items: center;
         display: inline-block;
         animation: cursor-blink 1s steps(2) infinite;
     }
-    
+
     @keyframes cursor-blink {
         0% {
             opacity: 0;
