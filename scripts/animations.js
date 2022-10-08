@@ -37,7 +37,9 @@ var text_animation = anime({
 var waypoint = new Waypoint({
     element: document.getElementById('section2'),
     handler: function () {
-        text_animation.play();
-        console.log('Basic waypoint triggered')
+        // text_animation.play();
+        // console.log('Basic waypoint triggered')
     }
 })
+
+// document.getElementsByClassName("title.name").addEventListener("mouseover", null);
