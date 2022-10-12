@@ -271,8 +271,12 @@ border-color: black;
 }
 
 .section .title {
-    font-size: 6rem;
+    font-size: 15vw;
     transition: 0.5s;
+}
+
+.section #job {
+    font-size: 10vw;
 }
 
 .section .description {
@@ -284,22 +288,25 @@ border-color: black;
     align-items: center;
     justify-content: space-around;
 }
+
 .section .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 10px;
     padding: 1rem;
     width: 100%;
-    font-size: 2rem;
+font-size: 7vw;    
+    margin-bottom: 2rem;
+}
+
+.section .card img {
+    width: 100%;
 }
 
 .section .name:after {
     display: none;
 }
 
-.section #job {
-    font-size: 4rem;
-}
 
 
 
@@ -328,12 +335,12 @@ border-color: black;
 #underline-btn:hover::after {
     transform: scaleX(1);
 }
-
-@media only screen and (min-width: 500px) {
+/* 
+@media only screen and (min-width: 600px) {
     .header-navigation {
         display: hidden;
     }
-}
+} */
 
 @media only screen and (min-width: 848px) {
     .header {
@@ -344,8 +351,20 @@ border-color: black;
         display: none;
     }
 
+    .section .title {
+        font-size: 6rem;
+    }
+
+    .section #job {
+        font-size: 4rem;
+    }
+
     .section .description {
         flex-direction: row;
+    }
+
+    .section .card {
+        font-size: 2rem;
     }
 
     .section .text {
