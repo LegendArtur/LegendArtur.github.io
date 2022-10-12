@@ -1,41 +1,13 @@
-// //scroll percent
-// const getPageScrollPercent = function (div) {
-//     return window.pageYOffset - div.offsetTop;
-// }
 
+var lineDrawing = anime({
+    targets: 'path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutSine',
+    duration: 5000,
+    begin: function(anim) {
+      document.querySelector('path').setAttribute("stroke", "blue");
+    },
+    autoplay: true
+  });
 
-// //scrolling animation
-// const sections = document.querySelectorAll(".section");
-
-
-
-// window.onscroll = function () {
-//     sections.forEach((section) => {
-//         let scrollPercent = getPageScrollPercent(section);
-//         console.log(section.id + " : " + scrollPercent);
-//         if (scrollPercent > 0) {
-//             section.classList.add('seen');
-//         }
-//         if (scrollPercent < 0) {
-//             section.classList.remove('seen');
-//         }
-//         text_animation.seek(getPageScrollLength(scrollPercent, 100, 0) * text_animation.duration);
-//     });
-// }
-
-
-var text_animation = anime({
-    targets: "#section2",
-    translateX: 250,
-    duration: 3000,
-    autoplay: false,
-});
-var waypoint = new Waypoint({
-    element: document.getElementById('section2'),
-    handler: function () {
-        // text_animation.play();
-        // console.log('Basic waypoint triggered')
-    }
-})
-
-// document.getElementsByClassName("title.name").addEventListener("mouseover", null);
+window.onload = console.log('yes');
