@@ -3,10 +3,6 @@
 //     return window.pageYOffset - div.offsetTop;
 // }
 
-// //scroll trigger amount
-// const getPageScrollLength = function (scrollPercent, speed = 100, offset = 0) {
-//     return (scrollPercent + offset) / speed;
-// }
 
 // //scrolling animation
 // const sections = document.querySelectorAll(".section");
