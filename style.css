@@ -1,14 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
 
 :root {
-    --nav-color: blue;
-    --text-color: blue;
-    --text-color-secondary: blue;
-    --background-color: white;
+    --text-color: white;
+    --ui-color: white;
+    --background-color: #140030;
 }
 
 .glass-effect {
-    background: rgba(255, 255, 255, 0);
+    background: rgba(188, 253, 73, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -16,12 +15,12 @@
 }
 
 * {
-    -webkit-tap-highlight-color:  rgba(255, 255, 255, .1); 
+    -webkit-tap-highlight-color: rgba(255, 255, 255, .1);
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Quicksand, sans-serif;
+    font-family: Mark Pro, sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -51,7 +50,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--nav-color);
+    background: var(--ui-color);
 }
 
 /* Handle on hover */
@@ -115,7 +114,7 @@ body {
 
 .header-navigation li:active {
     border-radius: 1rem;
-border-color: black;
+    border-color: black;
     transition: 0.125s ease;
 }
 
@@ -127,7 +126,7 @@ border-color: black;
     height: 0.1rem;
     bottom: 0;
     left: 0;
-    background-color: var(--text-color-secondary);
+    background-color: var(--text-color);
     transform: scaleX(0);
     transition: 0.3s ease;
 }
@@ -185,7 +184,7 @@ border-color: black;
 }
 
 .toggle {
-    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
     position: fixed;
     z-index: 3000;
@@ -200,7 +199,7 @@ border-color: black;
 }
 
 .toggle span {
-    background: var(--nav-color);
+    background: var(--ui-color);
     position: absolute;
     height: 0.25rem;
     border-radius: 4px;
@@ -250,6 +249,7 @@ border-color: black;
 }
 
 .section {
+
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -258,48 +258,57 @@ border-color: black;
     color: var(--text-color);
 }
 
-.section::after{
+.section#section0 {
+    justify-content: center;
+}
+
+.section::after {
     border-color: var(--text-color);
     margin: 0;
     border-width: 1rem;
 }
 
 .section-info {
+    width: 100%;
     display: flex;
     position: relative;
     flex-direction: column;
+    align-items: center;
 }
 
 .section .title {
-    font-size: 15vw;
+    font-size: 10vw;
     transition: 0.5s;
+
+    margin-bottom: 2rem;
 }
 
 .section #job {
+    text-align: center;
     font-size: 10vw;
 }
 
 .section .description {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    padding: 3rem;
     width: 100%;
     height: 100%;
-    padding-top: 3rem;
+
+    font-size: 5vw;
+    margin: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-.section .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 100%;
-font-size: 7vw;    
-    margin-bottom: 2rem;
+.section .description:hover {
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
 }
 
-.section .card img {
+.section .description img {
     width: 100%;
 }
 
@@ -327,7 +336,7 @@ font-size: 7vw;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--text-color-secondary);
+    background-color: var(--text-color);
     transform: scaleX(0);
     transition: 0.3s ease;
 }
@@ -335,12 +344,7 @@ font-size: 7vw;
 #underline-btn:hover::after {
     transform: scaleX(1);
 }
-/* 
-@media only screen and (min-width: 600px) {
-    .header-navigation {
-        display: hidden;
-    }
-} */
+
 
 @media only screen and (min-width: 848px) {
     .header {
@@ -359,12 +363,17 @@ font-size: 7vw;
         font-size: 4rem;
     }
 
-    .section .description {
-        flex-direction: row;
+    .section-info {
+        margin: 4rem;
     }
 
-    .section .card {
+    .section .description {
+        flex-direction: row;
         font-size: 2rem;
+    }
+
+    .section .description img {
+        width: 50%;
     }
 
     .section .text {
@@ -373,7 +382,7 @@ font-size: 7vw;
 
     .section .name:after {
         content: "_";
-        color: var(--text-color-secondary);
+        color: var(--text-color);
         display: inline-block;
         animation: cursor-blink 1s steps(2) infinite;
     }
