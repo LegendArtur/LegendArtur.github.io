@@ -6,7 +6,7 @@ var lineDrawing = anime({
   easing: 'easeInOutSine',
   duration: 5000,
   begin: function(anim) {
-    document.querySelector('path').setAttribute("stroke", "white");
+    document.querySelector('path').setAttribute("stroke", "black");
   },
   autoplay: true
 });
