@@ -323,8 +323,23 @@ body {
     display: none;
 }
 
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+    transition-delay: 0.5s;
+}
 
+.show {
+    filter: blur(0);
+    opacity: 1;
+}
 
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
 
 #underline-btn {
     text-decoration: none;
@@ -351,6 +366,7 @@ body {
 #underline-btn:hover::after {
     transform: scaleX(1);
 }
+
 
 
 @media only screen and (min-width: 848px) {
