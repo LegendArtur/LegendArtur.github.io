@@ -1,0 +1,32 @@
+.scroll-arrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    animation: float 2s ease-in-out infinite;
+}
+
+.scroll-text {
+    margin-bottom: 5px;
+}
+
+.arrow-icon {
+    font-size: 24px;
+    /* Adjust size as needed */
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.scroll-arrow-container:hover {
+    transform: scale(1.1);
+}
