@@ -1,24 +1,26 @@
-"use client";
 import React from "react";
-import "@/styles/ScrollArrow.css"; // Path to your CSS file
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import "@/styles/ScrollArrow.css";
 
-const ScrollArrow = () => {
+interface ScrollArrowProps {
+  page?: number;
+}
 
+const ScrollArrow: React.FC<ScrollArrowProps> = ({ page = 1 }) => {
   const handleClick = () => {
     window.scrollTo({
-      top: window.innerHeight, // Adjust according to the height of your viewport or target element
+      top: window.innerHeight * page,
       behavior: "smooth",
     });
   };
 
   return (
-    <div
-      className="scroll-arrow-container"
-      onClick={handleClick}
-    >
-      <div className="scroll-text">Scroll</div>
-      <div className="arrow-icon">&#x2193;</div>{" "}
-      {/* This is a simple downward arrow. Replace with an icon if preferred. */}
+    <div className="flex flex-col justify-center bottom-0 relative">
+      <div className="scroll-arrow-container" onClick={handleClick}>
+        <div className="scroll-text">Scroll</div>
+        <FontAwesomeIcon icon={faChevronDown} className="arrow-icon" />
+      </div>
     </div>
   );
 };

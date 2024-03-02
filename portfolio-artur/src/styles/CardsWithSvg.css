@@ -6,24 +6,3 @@
 .group-card:hover svg {
   filter: grayscale(0%);
 }
-
-@keyframes trace-border {
-  0% {
-    stroke-dasharray: 1, 150;
-    stroke-dashoffset: 0;
-  }
-
-  50% {
-    stroke-dasharray: 90, 150;
-    stroke-dashoffset: -35;
-  }
-
-  100% {
-    stroke-dasharray: 90, 150;
-    stroke-dashoffset: -124;
-  }
-}
-
-.group-card:hover .border-animation {
-  animation: trace-border 1s infinite linear;
-}
