@@ -13,15 +13,16 @@ import React, {
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
 >(undefined);
-
 export const CardContainer = ({
   children,
   className,
   containerClassName,
+  multiplier = 1, // Add multiplier prop with a default value of 1
 }: {
   children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
+  multiplier?: number; // Declare the multiplier prop
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
@@ -30,8 +31,8 @@ export const CardContainer = ({
     if (!containerRef.current) return;
     const { left, top, width, height } =
       containerRef.current.getBoundingClientRect();
-    const x = 2* (e.clientX - left - width / 2) / 25;
-    const y = 0 - 2* (e.clientY - top - height / 2) / 25;
+    const x = (multiplier * (e.clientX - left - width / 2)) / 25;
+    const y = 0 - (multiplier * (e.clientY - top - height / 2)) / 25;
     containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
   };
 
@@ -48,10 +49,7 @@ export const CardContainer = ({
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn(
-          "flex items-center justify-center",
-          containerClassName
-        )}
+        className={cn("flex items-center justify-center", containerClassName)}
         style={{
           perspective: "1000px",
         }}

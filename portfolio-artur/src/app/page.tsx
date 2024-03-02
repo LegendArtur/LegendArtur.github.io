@@ -5,6 +5,8 @@ import NameText from "@/components/NameText";
 import CardsWithSvg from "@/components/CardsWithSvg";
 import ScrollArrow from "@/components/ScrollArrow";
 import { NextPage } from "next";
+import ExperienceText from "@/components/ExperienceText";
+import ExperienceList from "@/components/ExperienceList";
 
 const ProjectPage: NextPage = () => {
   useEffect(() => {
@@ -12,7 +14,11 @@ const ProjectPage: NextPage = () => {
   }, []);
 
   return (
-    <div className=" bg-black ">
+    
+    // <div className="relative min-h-full  pointer-events-none inset-0 dark:bg-black bg-white dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2]">
+    //   <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
+      
+    <div className=" bg-black bg-grid-black/[0.2]">
       <Spotlight
         className="hidden xl:block -top-40 left-0 md:left-60 md:-top-20"
         fill="white"
@@ -27,19 +33,12 @@ const ProjectPage: NextPage = () => {
       <div className="min-h-screen grid grid-rows-5 gap-4">
         <div></div>
         <div></div>
-        <div className="flex flex-col items-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-center">
-            Over <span className="text-gradient">1.5 years</span> of
-          </h1>
-          <span className="text-3xl md:text-5xl font-bold">
-            professional experience.
-          </span>
-        </div>
+        <ExperienceText />
         <CardsWithSvg />
-        <ScrollArrow page={2} />
+        <div></div>
       </div>
       <div className="min-h-screen flex flex-col items-center justify-center">
-        <h1>HOLA</h1>
+        <ExperienceList />
       </div>
     </div>
   );
