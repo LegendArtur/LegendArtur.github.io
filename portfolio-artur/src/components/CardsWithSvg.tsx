@@ -14,16 +14,16 @@ const FourCardsWithSvg: React.FC = () => {
     return (
       <div
         ref={ref}
-        className={`flex-1 mx-16 ease-in ${
+        className={`flex-1 mx-12 ease-in ${
           inView
             ? `opacity-100 duration-500 delay-${750 + index * 250}`
             : "opacity-0 duration-0 delay-0"
         } `}
       >
-        <CardContainer className="w-full">
+        <CardContainer className="w-full cursor-pointer">
           <CardBody className="bg-none relative group-card h-16 w-16 rounded-xl">
             <CardItem
-              translateZ="50"
+              translateZ="100"
               className="text-xl font-bold text-neutral-600 dark:text-white"
             >
               <div className="flex justify-center items-center h-full">
@@ -40,13 +40,13 @@ const FourCardsWithSvg: React.FC = () => {
     <div className="hidden sm:flex flex-row items-center justify-center">
       <div className="flex flex-col items-center">
         <span
-          className={`text-gray-400 text-4xl mb-8 mt-8 ease-in ${
+          className={`text-gray-400 text-2xl my-8 ease-in ${
             inView
               ? `opacity-100 duration-500 delay-250`
               : "opacity-0 duration-0 delay-0"
           } `}
         >
-          Trusted by companies like:
+          Trusted by top companies
         </span>
         <div className="flex justify-center items-center w-full">
           {renderCard({ svg: <FloSymbol />, index: 0 })}

@@ -38,6 +38,10 @@ body::-webkit-scrollbar {
   width: 0;
 }
 
+.high-z-index {
+  z-index: 1000; /* Adjust the value as necessary */
+}
+
 .delay-0 {
   transition-delay: 0ms;
 }

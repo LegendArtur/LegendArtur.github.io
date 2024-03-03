@@ -47,7 +47,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
         <span className="text-sm">{timeframe}</span>
         <div className="w-16 h-1 bg-black ml-2 mr-6" />
       </div>
-      <div className="border border-white p-4 rounded-lg items-center w-2/3 shadow-lg grid grid-cols-3">
+      <div className="border border-white/[0.2] p-4 rounded-lg items-center w-2/3 shadow-lg grid grid-cols-3">
         <div className="col-span-1 flex justify-center items-center">
           <div className="w-24 h-24">{logo}</div>
         </div>
@@ -72,7 +72,7 @@ const ExperienceList: React.FC = () => {
         logo={<CoveoSymbol />}
         title="Software Solution Specialist Intern"
         company="Professional Services, Coveo Montreal, Canada"
-        timeframe="Jan – Apr. 2024"
+        timeframe="Currently here!"
         bulletPoints={[
           "Integrated Coveo’s AI search and GenAI frameworks inside various customer projects using React and Vue.js.",
           "Enhanced and deployed advanced .NET tooling projects utilizing C# and Azure for internal efficiencies.",
