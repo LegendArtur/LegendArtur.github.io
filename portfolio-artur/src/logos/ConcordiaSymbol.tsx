@@ -3,6 +3,7 @@ import React from "react";
 const ConcordiaSymbol: React.FC = () => (
   <svg
     width="100%"
+    height="100%"
     viewBox="0 0 350 350"
   >
     <path

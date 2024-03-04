@@ -3,12 +3,12 @@ import { NextUIProvider } from "@nextui-org/react";
 import React, { useEffect } from "react";
 import { NextPage } from "next";
 import ExperienceText from "@/components/ExperienceText";
-import ExperienceList from "@/components/ExperienceList";
 import CardsWithSvg from "@/components/CardsWithSvg";
 import { Spotlight } from "@/components/Spotlight";
 import ScrollArrow from "@/components/ScrollArrow";
 import NameText from "@/components/NameText";
-import WhoAmIText from "@/components/WhoAmIText";
+import WhoAmIPage from "@/components/WhoAmIPage";
+import ContactMeCard from "@/components/ContactMeCard";
 
 const ProjectPage: NextPage = () => {
   useEffect(() => {
@@ -39,8 +39,12 @@ const ProjectPage: NextPage = () => {
           <div></div>
         </div>
         <div className="min-h-screen flex flex-col items-center justify-center">
-          {/* <ExperienceList /> */}
-        <WhoAmIText />
+          <WhoAmIPage></WhoAmIPage>
+        </div>
+        <div className="min-h-screen grid grid-rows-3 gap-4">
+          <div></div>
+          <ContactMeCard />
+          <div></div>
         </div>
       </div>
     </NextUIProvider>
