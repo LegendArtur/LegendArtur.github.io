@@ -1,0 +1,43 @@
+.group-card svg {
+  filter: grayscale(100%);
+  transition: filter 0.25s ease-in-out;
+}
+
+.group-card:hover svg {
+  filter: grayscale(0%);
+}
+
+.bg-glass-effect {
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.image-container {
+  width: 500px;
+  height: 199px;
+  mask: url('LinkedIn.png') no-repeat center / contain;
+  background: white;
+}
+
+.image-container:hover {
+  background: linear-gradient(to right, #6ee7b7, #3b82f6);
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+html {
+  scrollbar-width: none;
+}
+
+/* For WebKit browsers */
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+.high-z-index {
+  z-index: 1000; /* Adjust the value as necessary */
+}
+
+.delay-0 {
+  transition-delay: 0ms;
+}
+
+.delay-250 {
+  transition-delay: 250ms;
+}
+
+.delay-500 {
+  transition-delay: 500ms;
+}
+
+.delay-750 {
+  transition-delay: 750ms;
+}
+
+.delay-1000 {
+  transition-delay: 1000ms;
+}
+
+.delay-1250 {
+  transition-delay: 1250ms;
+}
+
+.delay-1500 {
+  transition-delay: 1500ms;
+}
+
+.delay-1750 {
+  transition-delay: 1750ms;
+}
+
+.delay-2000 {
+  transition-delay: 2000ms;
+}
+
+.delay-2250 {
+  transition-delay: 2250ms;
+}
+
+.delay-2500 {
+  transition-delay: 2500ms;
+}
