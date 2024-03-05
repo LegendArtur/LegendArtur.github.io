@@ -29,13 +29,13 @@ const WhoAmIText: React.FC<WhoAmITextProps> = ({ sections }) => {
   };
 
   return (
-    <div className="grid grid-cols-3 justify-items-center w-full mt-40 mx-24 relative">
-      <div className="col-end-2 absolute inset-0 grid z-0 place-items-center py-44">
+    <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center w-full mt-40 relative">
+      <div className="hidden sm:grid col-end-2 absolute inset-0 z-0 place-items-center py-44">
         <div className="w-0.5 bg-white h-full rounded-full"></div>
       </div>
 
       <motion.div
-        className="sticky top-1/2 -translate-y-1/2 h-44 w-44 flex flex-col justify-center items-center mt-44 z-10"
+        className="sticky top-1/2 -translate-y-1/2 h-44 w-44 hidden sm:flex flex-col justify-center items-center mt-44 z-10"
         initial={{ translateY: "-50%" }}
         animate={{ scale: previous ? 1 : 0.8 }}
         transition={{ type: "spring", stiffness: 300 }}
@@ -45,7 +45,7 @@ const WhoAmIText: React.FC<WhoAmITextProps> = ({ sections }) => {
         </div>
       </motion.div>
 
-      <div className="flex-1 flex flex-col max-w-fit z-10 col-start-2">
+      <div className="flex-1 flex flex-col max-w-fit z-10 col-start-2 mx-8 sm:mx-0 ">
         {sections.map((section, index) => (
           <motion.div
             key={index}
@@ -67,7 +67,7 @@ const WhoAmIText: React.FC<WhoAmITextProps> = ({ sections }) => {
       </div>
 
       <motion.div
-        className="sticky top-1/2 h-44 w-44 z-10 col-start-3 mt-44"
+        className="hidden sm:grid sticky top-1/2 h-44 w-44 z-10 col-start-3 mt-44"
         initial={{ translateY: "-50%" }}
         animate={{ scale: previous ? 1 : 0.8, opacity: previous ? 1 : 0.25 }}
         transition={{ scale: { type: "spring", stiffness: 300 } }}

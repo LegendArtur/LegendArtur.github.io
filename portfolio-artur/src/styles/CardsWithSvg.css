@@ -22,6 +22,13 @@
   background: white;
 }
 
+.image-container-mobile {
+  width: 200px;
+  height: 199px;
+  mask: url('LinkedIn.png') no-repeat center / contain;
+  background: white;
+}
+
 .image-container:hover {
   background: linear-gradient(to right, #6ee7b7, #3b82f6);
   background-size: 200% 200%;
