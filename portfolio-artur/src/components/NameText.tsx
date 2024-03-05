@@ -11,7 +11,7 @@ const NameText: React.FC = () => {
 
   return (
     <div ref={ref} className={`flex flex-col justify-center text-center fade-effect ${inView ? "fade-in" : "fade-out"}`}>
-      <h1 className="text-4xl md:text-7xl font-bold text-center">
+      <h1 className=" text-4xl md:text-7xl font-bold text-center">
         Artur <span className="text-gradient">Gub</span>aidullin.
       </h1>
       <span className="text-gradient text-3xl md:text-4xl">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { cn } from "@/utils/cn";
 
 type SpotlightProps = {
@@ -10,7 +10,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
   return (
     <svg
       className={cn(
-        `animate-spotlight pointer-events-none absolute md:h-screen md:w-screen md:lg:w-[79%] opacity-0`,
+        "animate-spotlight pointer-events-none absolute z-[1]  h-[29%] w-[69%] lg:w-[79%] opacity-0",
         className
       )}
       xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
         <ellipse
           cx="1924.71"
           cy="273.501"
-          rx="2124.71"
+          rx="1924.71"
           ry="273.501"
           transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3631.88 2291.09)"
           fill={fill || "white"}
