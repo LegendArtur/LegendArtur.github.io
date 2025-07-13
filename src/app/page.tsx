@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection'
 import ExperienceSection from '@/components/ExperienceSection'
 import SkillsSection from '@/components/SkillsSection'
 import ProjectsSection from '@/components/ProjectsSection'
+import Link from 'next/link'
 
 async function getPortfolioData() {
   const [profile, experiences, skills, projects] = await Promise.all([
@@ -33,12 +34,12 @@ export default async function Home() {
           <p className="text-gray-600 mb-4">
             Please add your profile information in the Sanity Studio.
           </p>
-          <a
+          <Link
             href="/studio"
             className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
           >
             Open Sanity Studio
-          </a>
+          </Link>
         </div>
       </div>
     )
@@ -64,10 +65,10 @@ export default async function Home() {
       <section className="py-20 bg-blue-600">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            I'm always interested in hearing about new opportunities and exciting projects.
+            I&apos;m always interested in hearing about new opportunities and exciting projects.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {profile.email && (

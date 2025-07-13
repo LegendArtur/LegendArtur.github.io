@@ -1,0 +1,22 @@
+# Deployment Configuration
+
+# Build output (already in .gitignore)
+.next/
+dist/
+build/
+
+# Environment variables (already in .gitignore)
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependencies (already in .gitignore)
+node_modules/
+
+# Sanity build cache
+.sanity/
+
+# OS files
+.DS_Store
+Thumbs.db
