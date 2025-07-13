@@ -46,23 +46,29 @@ export default async function Home() {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pt-16">{/* Added pt-16 for fixed nav */}
       <HeroSection profile={profile} />
       
       {experiences && experiences.length > 0 && (
-        <ExperienceSection experiences={experiences} />
+        <section id="experience">
+          <ExperienceSection experiences={experiences} />
+        </section>
       )}
       
       {skills && skills.length > 0 && (
-        <SkillsSection skills={skills} />
+        <section id="skills">
+          <SkillsSection skills={skills} />
+        </section>
       )}
       
       {projects && projects.length > 0 && (
-        <ProjectsSection projects={projects} featured />
+        <section id="projects">
+          <ProjectsSection projects={projects} featured />
+        </section>
       )}
       
       {/* Call to Action Section */}
-      <section className="py-20 bg-blue-600">
+      <section id="contact" className="py-20 bg-blue-600">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Let&apos;s Work Together
