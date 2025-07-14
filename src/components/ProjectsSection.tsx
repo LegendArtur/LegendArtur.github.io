@@ -1,43 +1,128 @@
-import {Project} from '@/types'
-import {urlFor} from '@/sanity/lib/image'
+
+import { Project } from '@/types'
+import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Card } from '@/components/ui/card'
+import { Github, ExternalLink } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 interface ProjectsSectionProps {
   projects: Project[]
   featured?: boolean
 }
 
-export default function ProjectsSection({projects, featured = false}: ProjectsSectionProps) {
-  const projectTypeLabels = {
-    professional: 'Professional',
-    personal: 'Personal',
-    opensource: 'Open Source',
-    academic: 'Academic',
-    hackathon: 'Hackathon',
-  }
-
-  const statusColors = {
-    development: 'bg-yellow-100 text-yellow-800',
-    completed: 'bg-green-100 text-green-800',
-    maintained: 'bg-blue-100 text-blue-800',
-    archived: 'bg-gray-100 text-gray-800',
-  }
-
+export default function ProjectsSection({ projects, featured = false }: ProjectsSectionProps) {
   const displayProjects = featured ? projects.filter(p => p.featured) : projects
 
   return (
-    <section className={`py-20 ${featured ? 'bg-gray-50' : 'bg-white'}`}>
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-24 bg-neutral-950" id="projects">
+      <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {featured ? 'Featured Projects' : 'Projects'}
-          </h2>
-          <p className="text-lg text-gray-600">
-            {featured 
-              ? 'Some of my most notable work' 
-              : 'A collection of my work across different domains'
-            }
+          <motion.h2
+            className="text-4xl font-bold text-white mb-4 tracking-tight"
+        </div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.18,
+              },
+            },
+          }}
+        >
+          <AnimatePresence>
+            {displayProjects.map((project) => (
+              <motion.div
+                key={project._id}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 40 }}
+                transition={{ duration: 0.7 }}
+              >
+                <Card className="bg-neutral-900 border border-neutral-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow flex flex-col">
+                  {project.mainImage && (
+                    <div className="w-full h-40 relative mb-4 rounded-lg overflow-hidden">
+                      <Image
+                        src={urlFor(project.mainImage).width(600).height(240).url()}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-neutral-300 mb-4 text-sm">
+                    {project.description}
+                  </p>
+                  {project.technologies && project.technologies.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech._id}
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-950 text-blue-400 border border-blue-900"
+                          style={tech.color ? { backgroundColor: `${tech.color}20`, color: tech.color } : {}}
+                        >
+                          {tech.name}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <div className="flex gap-4 mt-auto">
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-400 transition-colors"
+                        title="GitHub"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-400 transition-colors"
+                        title="Live Demo"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+                        title="Live Demo"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
           </p>
         </div>
 
